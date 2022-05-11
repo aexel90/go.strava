@@ -7,6 +7,7 @@ import (
 	"io/ioutil"
 	"net/http"
 	"net/url"
+	"time"
 )
 
 // An OAuthAuthenticator holds state about how OAuth requests should be authenticated.
@@ -46,10 +47,12 @@ var Permissions = struct {
 
 // AuthorizationResponse is returned as a result of the token exchange
 type AuthorizationResponse struct {
-	AccessToken string          `json:"access_token"`
-	RefreshToken string         `json:"refresh_token"`
-	State       string          `json:"State"`
-	Athlete     AthleteDetailed `json:"athlete"`
+	AccessToken  string          `json:"access_token"`
+	RefreshToken string          `json:"refresh_token"`
+	ExpiresAt    time.Time       `json:"expires_at"`
+	Expiresin    int             `json:"expires_in"`
+	State        string          `json:"State"`
+	Athlete      AthleteDetailed `json:"athlete"`
 }
 
 // CallbackPath returns the path portion of the CallbackURL.
