@@ -50,7 +50,7 @@ type AuthorizationResponse struct {
 	AccessToken  string          `json:"access_token"`
 	RefreshToken string          `json:"refresh_token"`
 	ExpiresAt    time.Time       `json:"expires_at"`
-	Expiresin    int             `json:"expires_in"`
+	ExpiresIn    int             `json:"expires_in"`
 	State        string          `json:"State"`
 	Athlete      AthleteDetailed `json:"athlete"`
 }
