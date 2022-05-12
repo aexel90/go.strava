@@ -7,7 +7,6 @@ import (
 	"io/ioutil"
 	"net/http"
 	"net/url"
-	"time"
 )
 
 // An OAuthAuthenticator holds state about how OAuth requests should be authenticated.
@@ -49,7 +48,7 @@ var Permissions = struct {
 type AuthorizationResponse struct {
 	AccessToken  string          `json:"access_token"`
 	RefreshToken string          `json:"refresh_token"`
-	ExpiresAt    time.Time       `json:"expires_at"`
+	ExpiresAt    int64           `json:"expires_at"`
 	ExpiresIn    int             `json:"expires_in"`
 	State        string          `json:"State"`
 	Athlete      AthleteDetailed `json:"athlete"`
